@@ -395,6 +395,7 @@ header {
 }
 
 .portfolio__item {
+    position: relative;
     background: var(--clr-accent);
     overflow: hidden;
 }
@@ -413,9 +414,24 @@ header {
 .portfolio__img:hover,
 .portfolio__item:focus .portfolio__img {
     transform: scale(1.2);
+    filter: brightness(70%);
     opacity: .5;
 }
 
+.portfolio__item :not(img){
+    position: absolute;
+    top: 80%;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.portfolio__item:hover :not(img){
+    opacity: 1;
+}
 
 /* footer */
 
